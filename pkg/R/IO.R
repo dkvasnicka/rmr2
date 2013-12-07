@@ -62,7 +62,7 @@ text.output.format = function(kv, con) {
 make.csv.input.format = function(...) function(con, keyval.length) {
   df = 
     tryCatch(
-      read.table(file = con, nrows = keyval.length, header = FALSE, ...),
+      read.table(file = con, nrows = keyval.length, ...),
       error = 
         function(e) {
           if(e$message != "no lines available in input")
